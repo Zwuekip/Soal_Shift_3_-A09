@@ -6,8 +6,11 @@
 
 ## DHCP
 ##  Nomor 1
-
-<p>1.Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membuat topologi tersebut dengan mudah. Bu Meguri memerintahkan Anri untuk menjadikan SURABAYA sebagai router, MALANG sebagai DNS Server, TUBAN sebagai DHCP server, serta MOJOKERTO sebagai Proxy server, dan UML lainnya sebagai client. Bu Meguri berpesan pada Anri untuk menyusun topologi secara hati-hati dan memperhatikan gambar topologi yang diberikan Bu Meguri. Karena TUBAN jauh dari client, maka perlu adanya perantara agar bisa saling terhubung. </p>
+<p>1. Yaitu untuk membuat topologi jaringan demi kelancaran TA-nya dengan kriteria sebagai berikut:</p> 
+<br>
+<img src="Gambar/18.png" width="600">
+<br>
+<p>  Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membuat topologi tersebut dengan mudah. Bu Meguri memerintahkan Anri untuk menjadikan SURABAYA sebagai router, MALANG sebagai DNS Server, TUBAN sebagai DHCP server, serta MOJOKERTO sebagai Proxy server, dan UML lainnya sebagai client. Bu Meguri berpesan pada Anri untuk menyusun topologi secara hati-hati dan memperhatikan gambar topologi yang diberikan Bu Meguri. Karena TUBAN jauh dari client, maka perlu adanya perantara agar bisa saling terhubung. </p>
 
 <p> Jawab : </p> 
 <p>1. Mengedit Topologi menjadi :</p> 
@@ -32,7 +35,7 @@ xterm -T SIDOARJO -e linux ubd0=SIDOARJO,jarkom umid=SIDOARJO eth0=daemon,,,swit
 xterm -T GRESIK -e linux ubd0=GRESIK,jarkom umid=GRESIK eth0=daemon,,,switch1 mem=64M &
 xterm -T MADIUN -e linux ubd0=MADIUN,jarkom umid=MADIUN eth0=daemon,,,switch3 mem=64M &
 ```
-<p>1. Menghapus # pada IP Forward di sysctl.conf (SURABAYA)</p> 
+<p>2. Menghapus # pada IP Forward di sysctl.conf (SURABAYA)</p> 
 
 ```
 nano /etc/sysctl.conf (surabaya)
@@ -40,13 +43,19 @@ uncomment net.ipv4.ip_forward=1
 sysctl -p
 ```
 <br>
-<img src="Gambar/1.png" width="600">
+<img src="Gambar/16.png" width="600">
 <br>
-<p>webserver yang digunakan </p> 
- 
-<img src="Gambar/nomor1_2.png" width="600">
- 
+<p>3. Membuat Interface </p> 
+
+<p>4. Melakukan Iptable di Surabaya </p> 
+
+```
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.168.0.0/16
+```
+
 ## Nomor 2 
+
+
 ## Nomor 3 
 ## Nomor 4 
 ## Nomor 5 
