@@ -6,13 +6,13 @@
 
 ## DHCP
 ##  Nomor 1
-<p>1. Yaitu untuk membuat topologi jaringan demi kelancaran TA-nya dengan kriteria sebagai berikut:</p> 
+<p>Yaitu untuk membuat topologi jaringan demi kelancaran TA-nya dengan kriteria sebagai berikut:</p> 
 <br>
 <img src="Gambar/18.png" width="600">
 <br>
 <p>  Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membuat topologi tersebut dengan mudah. Bu Meguri memerintahkan Anri untuk menjadikan SURABAYA sebagai router, MALANG sebagai DNS Server, TUBAN sebagai DHCP server, serta MOJOKERTO sebagai Proxy server, dan UML lainnya sebagai client. Bu Meguri berpesan pada Anri untuk menyusun topologi secara hati-hati dan memperhatikan gambar topologi yang diberikan Bu Meguri. Karena TUBAN jauh dari client, maka perlu adanya perantara agar bisa saling terhubung. </p>
 
-<p> Jawab : </p> 
+#### Jawab 
 <p>1. Mengedit Topologi menjadi :</p> 
 
 ```
