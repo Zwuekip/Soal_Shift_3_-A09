@@ -142,4 +142,57 @@ subnet 10.151.73.80 netmask 255.255.255.248 {
 <br>
 <img src="Gambar/14.png" width="600">
 
-## Nomor 7 
+## Nomor 7
+
+(7) Buat user autentikasi dengan format user : userta_yyy dan pass: inipassw0rdta_yyy
+
+## Jawab 
+<br> 
+Install squid3 dan apache utils di mojokerto 
+
+```
+apt-get install squid3
+apt-get install apache2-utils
+```
+buat file user 
+```
+htpasswd -c /etc/squid/passwd userta_a09
+```
+masukan password inipassw0rdta_a09
+dan buat file backup 
+
+```
+mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
+```
+edit etc/squid3/squid.conf 
+<br>
+
+<img src="https://raw.githubusercontent.com/Zwuekip/Soal_Shift_3_-A09/main/Gambar/7_sc.png" width="600">
+<br>
+Hasil : 
+<br>
+
+<img src="https://raw.githubusercontent.com/Zwuekip/Soal_Shift_3_-A09/main/Gambar/7_hasil.png" width="600">
+
+## Nomor 8-9
+(8) Batasi penggunaan internet hanya pada Selasa-Rabu pukul 13.00-18.00 saat pengerjaan TA 
+(9) Batasi penggunaan internet hanya pada Selasa-Kamis pukul 21.00 - 09.00 keesokan harinya (sampai
+Jumat jam 09.00) untuk bimbingan TA 
+
+## Jawab 
+edit file /etc/squid3/squid.conf 
+
+<br>
+
+<img src="https://raw.githubusercontent.com/Zwuekip/Soal_Shift_3_-A09/main/Gambar/8-9conf.png" width="600">
+
+## Nomor 10 
+(10) Setiap mengakses google.com, maka akan di redirect menuju monta.if.its.ac.id
+
+## Jawab 
+
+
+
+
+
+
