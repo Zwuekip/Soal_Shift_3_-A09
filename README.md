@@ -9,7 +9,6 @@
 <p>Yaitu untuk membuat topologi jaringan demi kelancaran TA-nya dengan kriteria sebagai berikut:</p> 
 <br>
 <img src="Gambar/18.png" width="600">
-<br>
 <p>  Anri sudah pernah mempelajari teknik Jaringan Komputer sehingga Anri dapat membuat topologi tersebut dengan mudah. Bu Meguri memerintahkan Anri untuk menjadikan SURABAYA sebagai router, MALANG sebagai DNS Server, TUBAN sebagai DHCP server, serta MOJOKERTO sebagai Proxy server, dan UML lainnya sebagai client. Bu Meguri berpesan pada Anri untuk menyusun topologi secara hati-hati dan memperhatikan gambar topologi yang diberikan Bu Meguri. Karena TUBAN jauh dari client, maka perlu adanya perantara agar bisa saling terhubung. </p>
 
 #### Jawab 
@@ -44,7 +43,6 @@ sysctl -p
 ```
 <br>
 <img src="Gambar/16.png" width="600">
-<br>
 <p>3. Membuat Interface </p> 
 
 <p>4. Melakukan Iptable di Surabaya </p> 
@@ -52,12 +50,37 @@ sysctl -p
 ```
 iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE -s 192.168.0.0/16
 ```
+<p>5. Instal dhcp server di TUBAN </p> 
 
-## Nomor 2 
+```
+apt-get install isc-dhcp-server
+```
+<p>6. Tambah "eth0" pada INTERFACES di isc-dhcp-server</p> 
 
+```
+nano /etc/default/isc-dhcp-server
+```
+<br>
+<img src="Gambar/17.png" width="600">
+<p>7. Install dhcp relay di SURABAYA</p> 
 
-## Nomor 3 
-## Nomor 4 
-## Nomor 5 
-## Nomor 6 
+```
+apt-get install isc-dhcp-relay
+```
+<p>Masukan Ip Tuban dan juga interface yang akan digunakan untuk menerima request yaitu eth1,eth2,eth3</p>
+<br>
+<img src="Gambar/1.png" width="600">
+<br>
+<img src="Gambar/2.png" width="600">
+<p>8. Cek settingannya apakah sudah benar</p>
+
+```
+nano /etc/default/isc-dhcp-relay
+```
+<br>
+<img src="Gambar/3.png" width="600">
+<p>8. Tambahkan subnet NID_DMZ seperti berikut agar dhcp relay bisa berjalan</p>
+
+## Nomor 2 - 6
+
 ## Nomor 7 
