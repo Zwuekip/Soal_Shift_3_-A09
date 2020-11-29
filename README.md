@@ -44,7 +44,22 @@ sysctl -p
 <br>
 <img src="Gambar/16.png" width="600">
 <p>3. Membuat Interface </p> 
-
+<br>
+<img src="Gambar/19.png" width="600">
+<br>
+<img src="Gambar/20.png" width="600">
+<br>
+<img src="Gambar/21.png" width="600">
+<br>
+<img src="Gambar/22.png" width="600">
+<br>
+<img src="Gambar/23.png" width="600">
+<br>
+<img src="Gambar/24.png" width="600">
+<br>
+<img src="Gambar/25.png" width="600">
+<br>
+<img src="Gambar/26.png" width="600">
 <p>4. Melakukan Iptable di Surabaya </p> 
 
 ```
@@ -62,25 +77,69 @@ nano /etc/default/isc-dhcp-server
 ```
 <br>
 <img src="Gambar/17.png" width="600">
-<p>7. Install dhcp relay di SURABAYA</p> 
+
+##  Nomor 2
+
+```
+SURABAYA ditunjuk sebagai perantara (DHCP Relay) antara DHCP Server dan client.
+Kriteria lain yang diminta Bu Meguri pada topologi jaringan tersebut adalah: Seluruh client TIDAK DIPERBOLEHKAN menggunakan konfigurasi IP Statis.
+```
+#### Jawab 
+<p>1. Install dhcp relay di SURABAYA</p> 
 
 ```
 apt-get install isc-dhcp-relay
 ```
-<p>Masukan Ip Tuban dan juga interface yang akan digunakan untuk menerima request yaitu eth1,eth2,eth3</p>
+<p>2. Masukan Ip Tuban dan juga interface yang akan digunakan untuk menerima request yaitu eth1,eth2,eth3</p>
 <br>
 <img src="Gambar/1.png" width="600">
 <br>
 <img src="Gambar/2.png" width="600">
-<p>8. Cek settingannya apakah sudah benar</p>
+<p>3. Cek settingannya apakah sudah benar</p>
 
 ```
 nano /etc/default/isc-dhcp-relay
 ```
 <br>
 <img src="Gambar/3.png" width="600">
-<p>8. Tambahkan subnet NID_DMZ seperti berikut agar dhcp relay bisa berjalan</p>
+<p>4. Tambahkan subnet NID_DMZ seperti berikut agar dhcp relay bisa berjalan</p>
 
-## Nomor 2 - 6
+```
+subnet 10.151.73.80 netmask 255.255.255.248 {
+    option routers 10.151.73.81;
+}
+```
+<br>
+<img src="Gambar/27.png" width="600">
+<p>5. Ubah semua client yang awalnya static menjadi menggunakan dhcp</p>
+<br>
+<img src="Gambar/28.png" width="600">
+<br>
+<img src="Gambar/29.png" width="600">
+<br>
+<img src="Gambar/30.png" width="600">
+<br>
+<img src="Gambar/31.png" width="600">
+
+## Nomor 3 - 6
+
+```
+(3) Client pada subnet 1 mendapatkan range IP dari 192.168.0.10 sampai 192.168.0.100 dan 192.168.0.110 sampai 192.168.0.200.
+(4) Client pada subnet 3 mendapatkan range IP dari 192.168.1.50 sampai 192.168.1.70.
+(5) Client mendapatkan DNS Malang dan DNS 202.46.129.2 dari DHCP
+(6) Client di subnet 1 mendapatkan peminjaman alamat IP selama 5 menit, sedangkan (6) client pada subnet 3 mendapatkan peminjaman IP selama 10 menit.
+```
+#### Jawab 
+<br>
+<img src="Gambar/27.png" width="600">
+<p>Hasil Testing</p>
+<br>
+<img src="Gambar/11.png" width="600">
+<br>
+<img src="Gambar/12.png" width="600">
+<br>
+<img src="Gambar/13.png" width="600">
+<br>
+<img src="Gambar/14.png" width="600">
 
 ## Nomor 7 
