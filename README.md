@@ -191,6 +191,67 @@ edit file /etc/squid3/squid.conf
 
 ## Jawab 
 
+Edit file /etc/squid3/squid.conf
+
+<br> 
+
+
+<img src="https://raw.githubusercontent.com/Zwuekip/Soal_Shift_3_-A09/main/Gambar/10conf.png" width="600">
+
+<br>
+
+## Nomor 11
+(11) Ubah error page default squid 
+
+tambahkan error_directory /usr/share/squid3/errors/image pada /etc/squid3/squid.conf
+<br>
+
+Buat direktori tersebut 
+ ```
+  mkdir /usr/share/squid3/errors/image
+ cd /usr/share/squid3/errors
+ ```
+ copy semua file template
+ ```
+ cp -r templates/* image/
+cd image/
+```
+<br>
+Jalankan wget -N 10.151.36.202/ERR_ACCESS_DENIED
+<br>
+Hasil : 
+<br>
+<img src="https://raw.githubusercontent.com/Zwuekip/Soal_Shift_3_-A09/main/Gambar/11hasil.png" width="600">
+
+<br>
+## Nomor 12
+
+(12) Mudahkan penggunaan proxy dengan domain janganlupa-ta.yyy.pw dan memasukkan port 8080.
+
+## Jawab 
+
+Install bind9 di malang dan buka /etc/bind/named.conf.local
+<br>
+<img src="https://raw.githubusercontent.com/Zwuekip/Soal_Shift_3_-A09/main/Gambar/12conflocal.png" width="600">
+<br> 
+
+Buat direktori praktikum di /etc/bind dan 
+cp /etc/bind/db.local ke janganlupa-ta.a09.pw di direktori tersebut
+<br>
+Edit file tersebut 
+<br>
+<img src="https://raw.githubusercontent.com/Zwuekip/Soal_Shift_3_-A09/main/Gambar/12malang.png" width="600">
+
+<br>
+
+
+
+        
+        
+        
+        
+        
+        
 
 
 
